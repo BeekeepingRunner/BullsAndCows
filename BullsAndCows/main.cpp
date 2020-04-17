@@ -133,6 +133,11 @@ void bullsAndCows()
     {
         bulls = 0;
         cows = 0;
+        // DEBUG
+        std::cout << "Aswer: ";
+        for (int dig : numToGuess)
+            std::cout << dig;
+        //
 
         std::cout << "Enter 4 different digits (e.g. 1234): ";
         enterGuess(guess);
@@ -165,10 +170,19 @@ bool retry()
         std::cin >> answ;
 
         if (answ == 'y')
+        {
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cin.clear();
             return 1;
+        }
+            
         else if (answ == 'n')
+        {
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cin.clear();
             return 0;
-        
+        }
+           
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         std::cin.clear();
     }

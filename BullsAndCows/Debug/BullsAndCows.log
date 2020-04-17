@@ -1,1 +1,3 @@
-﻿  BullsAndCows.vcxproj -> D:\Dev\C++\BullsAndCows\Debug\BullsAndCows.exe
+﻿  main.cpp
+D:\Dev\C++\BullsAndCows\BullsAndCows\main.cpp(193,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  BullsAndCows.vcxproj -> D:\Dev\C++\BullsAndCows\Debug\BullsAndCows.exe
