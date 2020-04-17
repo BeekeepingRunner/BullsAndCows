@@ -1,3 +1,7 @@
+// "Bulls and Cows" game, for rules, see definition of bullsAndCows() in this file
+//
+//
+
 #include "randomize.h"
 
 #include <iostream>
@@ -101,7 +105,7 @@ void printScore(int bulls, int cows)
     std::cout << "!\n";
 
     if (bulls == 4)
-        std::cout << "YOU WIN!!!\n";
+        std::cout << "YOU WIN!!!\n\n";
 }
 
 // User try to guess a random 4 digit number (digits are different from each other).
@@ -151,16 +155,38 @@ void bullsAndCows()
     }
 }
 
+bool retry() 
+{
+    std::cout << "Do you want to try again? (y/n): ";
+
+    while (true)
+    {
+        char answ{};
+        std::cin >> answ;
+
+        if (answ == 'y')
+            return 1;
+        else if (answ == 'n')
+            return 0;
+        
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cin.clear();
+    }
+}
+
 int main()
 {
     srand(time(NULL));
 
-    try {
-        bullsAndCows();
-    }
-    catch (std::runtime_error e) {
-        std::cout << "Error: " << e.what() << '\n';
-    }
+    do
+    {
+        try {
+            bullsAndCows();
+        }
+        catch (std::runtime_error e) {
+            std::cout << "Error: " << e.what() << '\n';
+        }
+    } while (retry());
 
     return 0;
 }
