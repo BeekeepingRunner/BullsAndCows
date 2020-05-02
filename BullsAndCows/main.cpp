@@ -133,11 +133,13 @@ void bullsAndCows()
     {
         bulls = 0;
         cows = 0;
-        // DEBUG
+
+        // For debugging
+        /*
         std::cout << "Aswer: ";
         for (int dig : numToGuess)
             std::cout << dig;
-        //
+        */
 
         std::cout << "Enter 4 different digits (e.g. 1234): ";
         enterGuess(guess);
