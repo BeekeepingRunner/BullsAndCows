@@ -13,6 +13,7 @@
 #include <vector>
 #include <ctime>
 
+
 void printWelcome()
 {
     std::cout << "\tBULLS AND COWS\n\n"
@@ -93,7 +94,7 @@ void enterGuess(std::vector<char>& guess)
     }
 }
 
-void printScore(int bulls, int cows)
+void printScore(int bulls, int cows, int counter)
 {
     std::cout << bulls << ' ';
     if (bulls == 1)
@@ -110,7 +111,11 @@ void printScore(int bulls, int cows)
     std::cout << "!\n";
 
     if (bulls == 4)
-        std::cout << "YOU WIN!!!\n\n";
+    {
+        std::cout << "YOU WIN!!!\n";
+        std::cout << "You had " << counter << " guesses.\n\n";
+    }
+        
 }
 
 // User try to guess randomly drawn 4 capital letters (letters are different from each other).
@@ -133,9 +138,11 @@ void bullsAndCows()
     short cows{ 0 };
 
     std::vector<char> guess;
+    int guessCount{ 0 };
 
     while (bulls != 4)
     {
+        ++guessCount;
         bulls = 0;
         cows = 0;
 
@@ -146,7 +153,7 @@ void bullsAndCows()
             std::cout << letter;
         */
 
-        std::cout << "Enter 4 different digits (e.g. 1234): ";
+        std::cout << "Enter 4 different letters (e.g. ABCD): ";
         enterGuess(guess);
 
         for (int i = 0; i < 4; ++i)
@@ -163,7 +170,7 @@ void bullsAndCows()
             }
         }
 
-        printScore(bulls, cows);
+        printScore(bulls, cows, guessCount);
     }
 }
 
