@@ -82,13 +82,12 @@ void enterGuess(std::vector<int>& guess)
             std::cout << "Wrong input, try again: ";
         }
 
-
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         std::cin.clear();
     }
 }
 
-void printScore(int bulls, int cows)
+void printScore(int bulls, int cows, int tryCount)
 {
     std::cout << bulls << ' ';
     if (bulls == 1)
@@ -105,7 +104,10 @@ void printScore(int bulls, int cows)
     std::cout << "!\n";
 
     if (bulls == 4)
-        std::cout << "YOU WIN!!!\n\n";
+    {
+        std::cout << "YOU WIN!!!\n";
+        std::cout << "You have tried " << tryCount << " times.\n\n";
+    }
 }
 
 // User try to guess a random 4 digit number (digits are different from each other).
@@ -126,6 +128,7 @@ void bullsAndCows()
 
     short bulls{ 0 };
     short cows{ 0 };
+    int tryCount{ 0 };
 
     std::vector<int> guess;
 
@@ -143,6 +146,7 @@ void bullsAndCows()
 
         std::cout << "Enter 4 different digits (e.g. 1234): ";
         enterGuess(guess);
+        ++tryCount;
 
         for (int i = 0; i < 4; ++i)
         {
@@ -158,7 +162,7 @@ void bullsAndCows()
             }
         }
 
-        printScore(bulls, cows);
+        printScore(bulls, cows, tryCount);
     }
 }
 
