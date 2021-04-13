@@ -1,0 +1,5 @@
+﻿  BullsAndCows_letters.cpp
+D:\Bartek\Kariera\Projekty na interview\test\BullsAndCows\letters_version\BullsAndCows_letters\BullsAndCows_letters.cpp(207,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  randomize.cpp
+  Generating Code...
+  BullsAndCows_letters.vcxproj -> D:\Bartek\Kariera\Projekty na interview\test\BullsAndCows\letters_version\Debug\BullsAndCows_letters.exe
