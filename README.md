@@ -11,3 +11,5 @@ If a digit in a guess is in the number drawn, but not on the right position, it'
 
 User is notified about the number of bulls and cows in his guess
 and plays until there are 4 bulls in a guess (the guess is correct).
+
+Game has been extended with a version with letters instead of digits. Rules stay the same.
